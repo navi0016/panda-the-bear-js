@@ -47,3 +47,45 @@ hitSubmit.disabled = true;
 
 var personalInfo = document.querySelector('.bio-info')
 personalInfo.innerHTML = null
+
+var timeTravel = document.querySelectorAll('.bar-default')
+timeTravel[2].outerHTML = null
+
+---------------------------------------
+<!-- crete a clone of pickachuPic under portfolioContainer -->
+
+var pickachuPic = document.querySelectorAll('img')
+var copyPickachu = pickachuPic[2].cloneNode(true)
+var portfolioContainer = document.querySelector('.portfolio-container')
+var portfolioContainer = document.querySelector('.portfolio-container')
+portfolioContainer.appendChild(copyPickachu)
+
+-------------------------------------
+<!-- copy pickachuPic 10 times using loop -->
+var pickachuPic = document.querySelectorAll('img')
+var portfolioContainer = document.querySelector('.portfolio-container')
+for ( i = 0; i < 10; i++) {
+    var copyPickachu = pickachuPic[2].cloneNode(true)
+    portfolioContainer.appendChild(copyPickachu)
+}
+
+--------------------------------------
+<!-- add a message about when the page was last updated  -->
+var bioInfo = document.querySelector('.bio-info')
+var listItem = document.createElement('li')
+var leftSpan = document.createElement('span')
+var lastUpdated = document.createTextNode('Page last updated on')
+leftSpan.appendChild(lastUpdated)
+listItem.appendChild(leftSpan)
+bioInfo.appendChild(listItem)
+<!-- give new li a class name -->
+var nameClass = document.querySelectorAll('li')
+nameClass[3].setAttribute('class','bio-info-item')
+
+----------------------------------
+<!-- adding date -->
+var rightSpan = document.createElement('span')
+var updatedAt = new Date()
+rightSpan.innerHTML = updatedAt
+var nameClass = document.querySelectorAll('.bio-info-item')
+nameClass[3].appendChild(rightSpan)
